@@ -58,3 +58,20 @@ test()   # prints nothing
 test(verbose=True)
 # prints:
 world
+```
+
+`verbose` can also be used as a factory to create decorators for turning print on/off by default
+```
+echo_off = verbose(default=False)  
+echo_on = verbose(default=True)
+
+# equivalent to @verbose or @verbose(default=False)
+@echo_off
+def test(x):
+    print(x)
+    
+# equivalent to @verbose(default=True)
+@echo_on
+def test(x):
+    print(x)
+```
