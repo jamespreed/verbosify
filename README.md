@@ -1,7 +1,10 @@
 # verbosify
-Python decorator for turning on/off print statements in a function.  Useful for debugging code without having to comment out print statements.
+Python decorator for turning on/off print statements in a function.  
 
-### Usage
+## Why verbosify?
+Because `logging` is for suckers!  Just kidding.  This is simply a quick and dirty decorator that is useful for debugging code without having to comment out print statements.  It also allows you to rapidly add in on/off functionality for printing output (looking at you `statsmodels` ಠ_ಠ)
+
+## Usage
 Simply decorate a function with `@verbose` to do the following:
   + add the keyword-only argument `verbose` to the function
   + update the docstring to include information about the `verbose` option
@@ -75,3 +78,12 @@ def test(x):
 def test(x):
     print(x)
 ```
+
+## To do list:
+- add argument to change the name of the keyword argument added to the decorated function (default: `verbose`)
+- add argument to turn change the style of the appended docstring, possible styles:
+  - `'none'`
+  - `'numpy'`
+  - `'sphinx'`
+  - `'google'`
+  - custom maybe?
